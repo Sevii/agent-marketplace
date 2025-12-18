@@ -1,0 +1,57 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run start:*)",
+      "Bash(grep:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run build:*)"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PLUGIN_DIR}/elevator-music.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PLUGIN_DIR}/elevator-music.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PLUGIN_DIR}/elevator-music.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${PLUGIN_DIR}/elevator-music.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
