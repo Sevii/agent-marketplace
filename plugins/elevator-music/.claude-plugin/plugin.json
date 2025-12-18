@@ -6,14 +6,7 @@
     "name": "sevii"
   },
   "homepage": "https://github.com/sevii/agent-marketplace",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sevii/agent-marketplace.git"
-  },
+  "repository": "https://github.com/sevii/agent-marketplace",
   "license": "MIT",
-  "keywords": ["hooks", "music", "waiting", "ux", "productivity"],
-  "hooks": {
-    "enabled": true,
-    "configPath": "./hooks/hooks.json"
-  }
+  "keywords": ["hooks", "music", "waiting", "ux", "productivity"]
 }
