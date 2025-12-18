@@ -5,7 +5,7 @@
         {
           "type": "command",
           "command": "${CLAUDE_PLUGIN_ROOT}/elevator-music.sh",
-          "timeout": 5
+          "timeout": 35
         }
       ]
     }
@@ -17,7 +17,7 @@
         {
           "type": "command",
           "command": "${CLAUDE_PLUGIN_ROOT}/elevator-music.sh",
-          "timeout": 5
+          "timeout": 35
         }
       ]
     },
@@ -27,12 +27,12 @@
         {
           "type": "command",
           "command": "${CLAUDE_PLUGIN_ROOT}/elevator-music.sh",
-          "timeout": 5
+          "timeout": 35
         }
       ]
     }
   ],
-  "PermissionRequest": [
+  "SessionEnd": [
     {
       "hooks": [
         {

@@ -63,35 +63,34 @@ start_music() {
 
     log "Starting elevator music with $player for session $session_id"
 
-    # Start music player based on what's available
+    # Start music player based on what's available (single playback, no looping)
     case "$player" in
         ffplay)
-            nohup ffplay -nodisp -autoexit -loop 0 "$MUSIC_FILE" >/dev/null 2>&1 &
+            nohup ffplay -nodisp -autoexit "$MUSIC_FILE" >/dev/null 2>&1 &
             ;;
         mpv)
-            nohup mpv --no-video --loop=inf "$MUSIC_FILE" >/dev/null 2>&1 &
+            nohup mpv --no-video "$MUSIC_FILE" >/dev/null 2>&1 &
             ;;
         afplay)
-            # afplay doesn't loop, so we'll just play once
             nohup afplay "$MUSIC_FILE" >/dev/null 2>&1 &
             ;;
         paplay)
             nohup paplay --raw "$MUSIC_FILE" >/dev/null 2>&1 &
             ;;
         cvlc)
-            nohup cvlc --no-video --loop --quiet "$MUSIC_FILE" >/dev/null 2>&1 &
+            nohup cvlc --no-video --quiet --play-and-exit "$MUSIC_FILE" >/dev/null 2>&1 &
             ;;
     esac
 
     local music_pid=$!
     echo "$music_pid" > "$pid_file"
     log "Music started with PID $music_pid"
-    
-    # Start background timer to stop music after 10 seconds
+
+    # Start background timer to stop music after 30 seconds
     (
-        sleep 10
+        sleep 30
         if [ -f "$pid_file" ] && kill -0 "$music_pid" 2>/dev/null; then
-            log "Auto-stopping music after 10 seconds (PID: $music_pid)"
+            log "Auto-stopping music after 30 seconds (PID: $music_pid)"
             kill "$music_pid" 2>/dev/null || true
             sleep 0.1
             kill -9 "$music_pid" 2>/dev/null || true
