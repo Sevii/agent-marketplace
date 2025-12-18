@@ -17,9 +17,10 @@ claude-code plugin install sevii-agent-marketplace/elevator-music
 ## Features
 
 - Automatically plays elevator music when Claude Code is waiting for user input
-- Configurable music selection (TODO)
-- Volume control (TODO)
-- Enable/disable toggle (TODO)
+- Plays on idle prompts, permission prompts, and Stop events
+- Auto-stops after 10 seconds to prevent indefinite playback
+- Supports multiple audio players (ffplay, mpv, afplay, paplay, cvlc)
+- Includes "Quiet Floors" elevator music track
 
 ## Configuration
 
