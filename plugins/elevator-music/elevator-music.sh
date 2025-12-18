@@ -8,8 +8,7 @@ set -euo pipefail
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SOUNDS_DIR="${SCRIPT_DIR}/sounds"
-MUSIC_FILE="${SOUNDS_DIR}/elevator-music.mp3"
-MUSIC_URL="https://www.bensound.com/bensound-music/bensound-jazzyfrenchy.mp3"
+MUSIC_FILE="${SOUNDS_DIR}/QuietFloors.mp3"
 PID_DIR="/tmp/claude-elevator-music"
 
 # Ensure PID directory exists
@@ -38,28 +37,6 @@ detect_audio_player() {
     fi
 }
 
-# Download elevator music if not present
-ensure_music_file() {
-    if [ ! -f "$MUSIC_FILE" ]; then
-        log "Music file not found, attempting download..."
-        if command -v curl >/dev/null 2>&1; then
-            curl -L -o "$MUSIC_FILE" "$MUSIC_URL" 2>/dev/null || {
-                log "Download failed, will attempt streaming"
-                return 1
-            }
-        elif command -v wget >/dev/null 2>&1; then
-            wget -q -O "$MUSIC_FILE" "$MUSIC_URL" || {
-                log "Download failed, will attempt streaming"
-                return 1
-            }
-        else
-            log "No download tool available"
-            return 1
-        fi
-    fi
-    return 0
-}
-
 # Start playing music
 start_music() {
     local session_id="$1"
@@ -86,29 +63,23 @@ start_music() {
 
     log "Starting elevator music with $player for session $session_id"
 
-    # Try to use local file first, fall back to streaming
-    local audio_source="$MUSIC_FILE"
-    if ! ensure_music_file; then
-        audio_source="$MUSIC_URL"
-    fi
-
     # Start music player based on what's available
     case "$player" in
         ffplay)
-            nohup ffplay -nodisp -autoexit -loop 0 "$audio_source" >/dev/null 2>&1 &
+            nohup ffplay -nodisp -autoexit -loop 0 "$MUSIC_FILE" >/dev/null 2>&1 &
             ;;
         mpv)
-            nohup mpv --no-video --loop=inf "$audio_source" >/dev/null 2>&1 &
+            nohup mpv --no-video --loop=inf "$MUSIC_FILE" >/dev/null 2>&1 &
             ;;
         afplay)
             # afplay doesn't loop, so we'll just play once
-            nohup afplay "$audio_source" >/dev/null 2>&1 &
+            nohup afplay "$MUSIC_FILE" >/dev/null 2>&1 &
             ;;
         paplay)
-            nohup paplay --raw "$audio_source" >/dev/null 2>&1 &
+            nohup paplay --raw "$MUSIC_FILE" >/dev/null 2>&1 &
             ;;
         cvlc)
-            nohup cvlc --no-video --loop --quiet "$audio_source" >/dev/null 2>&1 &
+            nohup cvlc --no-video --loop --quiet "$MUSIC_FILE" >/dev/null 2>&1 &
             ;;
     esac
 
@@ -231,10 +202,10 @@ main() {
             echo "Testing elevator music extension..."
             echo "Audio player: $(detect_audio_player)"
             echo "Music file: $MUSIC_FILE"
-            if ensure_music_file; then
-                echo "Music file ready"
+            if [ -f "$MUSIC_FILE" ]; then
+                echo "Music file found"
             else
-                echo "Will use streaming from: $MUSIC_URL"
+                echo "Warning: Music file not found at $MUSIC_FILE"
             fi
             echo "Starting test playback..."
             start_music "test"
