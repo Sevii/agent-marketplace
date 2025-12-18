@@ -11,7 +11,7 @@ This plugin enhances the Claude Code experience by playing pleasant elevator mus
 Inside Claude Code run
 
 ```bash
-/plugin marketplace add owner/repo
+/plugin marketplace add sevii/agent-marketplace
 
 /plugin install elevator-music@agent-marketplace
 ```
