@@ -8,10 +8,12 @@ This plugin enhances the Claude Code experience by playing pleasant elevator mus
 
 ## Installation
 
-From the sevii-agent-marketplace:
+Inside Claude Code run
 
 ```bash
-claude-code plugin install sevii-agent-marketplace/elevator-music
+/plugin marketplace add sevii/agent-marketplace
+
+/plugin install elevator-music@agent-marketplace
 ```
 
 ## Features
