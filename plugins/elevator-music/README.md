@@ -1,6 +1,6 @@
 # Elevator Music Plugin
 
-Plays soothing elevator music while Claude Code is waiting for user input.
+Plays soothing elevator music while Claude Code is waiting for user input. Letting you know its time to switch back to your terminal.
 
 ## Overview
 
@@ -23,16 +23,18 @@ claude-code plugin install sevii-agent-marketplace/elevator-music
 
 ## Configuration
 
-TODO: Add configuration instructions
 
-## Implementation Status
 
-This plugin is currently a stub with the following structure in place:
-- Plugin manifest (.claude-plugin/plugin.json)
-- Hooks configuration (hooks/hooks.json)
+## Music Info
 
-Implementation of the actual music playback functionality is pending.
+Song: Quiet Floors
+
+This song is a derivative of an audio sample I created with GarageBand.
+Then I used Suno to transform that sample into the song. 
+This was done using a paid Suno account granting me commercial and non-personal use of the output audio. 
+For questions or other license concerns email me via nick@sledgeworx.io
+
 
 ## License
 
-MIT
+MIT except for music
