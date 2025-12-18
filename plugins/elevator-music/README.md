@@ -1,6 +1,6 @@
 # Elevator Music Plugin
 
-Plays soothing elevator music while Claude Code is waiting for user input. Letting you know its time to switch back to your
+Plays soothing elevator music while Claude Code is waiting for user input. Letting you know its time to switch back to your terminal.
 
 ## Overview
 
