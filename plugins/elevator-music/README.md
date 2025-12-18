@@ -1,6 +1,6 @@
 # Elevator Music Plugin
 
-Plays soothing elevator music while Claude Code is waiting for user input. Letting you know it's time to switch back to your terminal.
+Plays soothing elevator music while Claude Code is waiting for user input. Letting you know its time to switch back to your terminal.
 
 ## Overview
 
@@ -24,35 +24,18 @@ claude-code plugin install sevii-agent-marketplace/elevator-music
 
 ## Configuration
 
-The plugin uses hooks to trigger elevator music playback. The configuration is handled through Claude Code's hook system.
 
-### Example Configuration
-
-See `settings.example.json` for a complete configuration example. The plugin hooks on:
-- **Stop**: When Claude finishes and is idle
-- **Notification** (idle_prompt): When waiting for user input
-- **Notification** (permission_prompt): When requesting permissions
-- **PermissionRequest**: When permissions are being requested
-
-### Audio Player Requirements
-
-The plugin automatically detects and uses one of the following audio players (in order of preference):
-1. `ffplay` (from FFmpeg)
-2. `mpv`
-3. `afplay` (macOS)
-4. `paplay` (PulseAudio)
-5. `cvlc` (VLC command-line)
-
-Make sure at least one of these is installed on your system.
 
 ## Music Info
 
-**Song**: Quiet Floors
+Song: Quiet Floors
 
-This song is a derivative of an audio sample created with GarageBand, then transformed using Suno AI. This was done using a paid Suno account granting commercial and non-personal use of the output audio.
+This song is a derivative of an audio sample I created with GarageBand.
+Then I used Suno to transform that sample into the song. 
+This was done using a paid Suno account granting me commercial and non-personal use of the output audio. 
+For questions or other license concerns email me via nick@sledgeworx.io
 
-For questions or license concerns, email: nick@sledgeworx.io
 
 ## License
 
-MIT (except for music - see Music Info section)
+MIT except for music

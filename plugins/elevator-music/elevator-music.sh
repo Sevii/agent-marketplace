@@ -8,7 +8,7 @@ set -euo pipefail
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SOUNDS_DIR="${SCRIPT_DIR}/sounds"
-MUSIC_FILE="${SOUNDS_DIR}/QuietFloors.mp3"
+MUSIC_FILE="${SOUNDS_DIR}/elevator-music.mp3"
 MUSIC_URL="https://www.bensound.com/bensound-music/bensound-jazzyfrenchy.mp3"
 PID_DIR="/tmp/claude-elevator-music"
 
