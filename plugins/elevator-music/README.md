@@ -1,6 +1,6 @@
 # Elevator Music Plugin
 
-Plays soothing elevator music while Claude Code is waiting for user input. Letting you know its time to switch back to your terminal.
+Plays soothing elevator music while Claude Code is waiting for user input. Letting you know its time to switch back to your
 
 ## Overview
 
@@ -8,10 +8,12 @@ This plugin enhances the Claude Code experience by playing pleasant elevator mus
 
 ## Installation
 
-From the sevii-agent-marketplace:
+Inside Claude Code run
 
 ```bash
-claude-code plugin install sevii-agent-marketplace/elevator-music
+/plugin marketplace add owner/repo
+
+/plugin install elevator-music@agent-marketplace
 ```
 
 ## Features
