@@ -1,0 +1,23 @@
+{
+  "name": "sevii-agent-marketplace",
+  "owner": {
+    "name": "sevii",
+    "email": ""
+  },
+  "metadata": {
+    "description": "A curated collection of Claude Code plugins for enhanced development workflows",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "elevator-music",
+      "source": "./plugins/elevator-music",
+      "description": "Plays soothing elevator music while Claude Code is waiting for user input",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": ["hooks", "music", "waiting", "ux"],
+      "strict": true
+    }
+  ]
+}

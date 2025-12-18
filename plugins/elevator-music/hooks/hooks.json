@@ -1,0 +1,12 @@
+{
+  "hooks": [
+    {
+      "name": "play-elevator-music",
+      "description": "Plays elevator music when Claude Code is waiting for user input",
+      "event": "waiting-for-input",
+      "action": "execute",
+      "command": "# TODO: Implement music playback command",
+      "enabled": true
+    }
+  ]
+}
