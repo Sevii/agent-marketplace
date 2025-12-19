@@ -13,7 +13,7 @@ Plays soothing elevator music while Claude Code is waiting for user input, remin
 
 ### Demo
 
-https://github.com/Sevii/agent-marketplace/blob/main/assets/ClaudeElevatorMusicDemo_opt.mp4
+[https://github.com/Sevii/agent-marketplace/blob/main/assets/ClaudeElevatorMusicDemo_opt.mp4](https://github.com/Sevii/agent-marketplace/blob/main/assets/ClaudeElevatorMusicDemo_opt.mp4)
 
 ## Hook Logger
 
