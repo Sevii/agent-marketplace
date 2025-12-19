@@ -30,7 +30,7 @@ test_mode() {
     echo "Log file: $LOG_FILE"
 
     if [ -f "$LOG_FILE" ]; then
-        echo "Current entries: $(jq '.entries | length' "$LOG_FILE" 2>/dev/null || echo "0")"
+        echo "Current entries: $(wc -l < "$LOG_FILE" 2>/dev/null || echo "0")"
     else
         echo "Log file does not exist yet"
     fi
@@ -46,7 +46,7 @@ test_mode() {
     echo "Test event logged successfully!"
     echo ""
     echo "Latest 3 entries:"
-    jq '.entries | .[-3:]' "$LOG_FILE" 2>/dev/null || echo "No entries yet"
+    tail -n 3 "$LOG_FILE" 2>/dev/null | jq '.' || echo "No entries yet"
 
     exit 0
 }
@@ -83,7 +83,7 @@ else
     TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%S%z")
 fi
 
-TIMESTAMPED_EVENT=$(echo "$EVENT_DATA" | jq --arg ts "$TIMESTAMP" '. + {timestamp: $ts}' 2>/dev/null || echo "$EVENT_DATA")
+TIMESTAMPED_EVENT=$(echo "$EVENT_DATA" | jq -c --arg ts "$TIMESTAMP" '. + {timestamp: $ts}' 2>/dev/null || echo "$EVENT_DATA")
 
 # ============================================================================
 # File Locking - Ensure atomic operations
@@ -142,28 +142,20 @@ fi
 
 # Initialize log file if it doesn't exist
 if [ ! -f "$LOG_FILE" ]; then
-    echo "{\"version\": \"1.0\", \"max_entries\": $MAX_ENTRIES, \"entries\": []}" | jq '.' > "$LOG_FILE" 2>/dev/null || {
-        echo '{"version": "1.0", "max_entries": '"$MAX_ENTRIES"', "entries": []}' > "$LOG_FILE"
-    }
+    touch "$LOG_FILE"
 fi
 
-# Append entry and rotate if needed
-UPDATED_LOG=$(jq --argjson event "$TIMESTAMPED_EVENT" --argjson max "$MAX_ENTRIES" '
-  .entries += [$event] |
-  if (.entries | length) > $max then
-    .entries = .entries[-(($max | tonumber)):]
-  else
-    .
-  end
-' "$LOG_FILE" 2>/dev/null)
+# Append the timestamped event as a single line (NDJSON format)
+echo "$TIMESTAMPED_EVENT" >> "$LOG_FILE"
 
-# Check if jq succeeded
-if [ $? -eq 0 ] && [ -n "$UPDATED_LOG" ]; then
-    # Write back with pretty-printing
-    echo "$UPDATED_LOG" | jq '.' > "$LOG_FILE" 2>/dev/null || {
-        # Fallback: write without pretty-printing
-        echo "$UPDATED_LOG" > "$LOG_FILE"
-    }
+# Rotate log file if it exceeds MAX_ENTRIES
+# Keep only the last MAX_ENTRIES lines
+LINE_COUNT=$(wc -l < "$LOG_FILE" 2>/dev/null || echo "0")
+if [ "$LINE_COUNT" -gt "$MAX_ENTRIES" ]; then
+    # Keep only the last MAX_ENTRIES lines
+    TEMP_FILE="${LOG_FILE}.tmp.$$"
+    tail -n "$MAX_ENTRIES" "$LOG_FILE" > "$TEMP_FILE"
+    mv "$TEMP_FILE" "$LOG_FILE"
 fi
 
 # Lock automatically released on script exit
