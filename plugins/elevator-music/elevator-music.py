@@ -11,6 +11,7 @@ import subprocess
 import signal
 import time
 import shutil
+import random
 from pathlib import Path
 from datetime import datetime
 from threading import Timer
@@ -18,7 +19,6 @@ from threading import Timer
 # Configuration
 SCRIPT_DIR = Path(__file__).parent.resolve()
 SOUNDS_DIR = SCRIPT_DIR / "sounds"
-MUSIC_FILE = SOUNDS_DIR / "QuietFloors.mp3"
 PID_DIR = Path("/tmp/claude-elevator-music")
 
 # Ensure PID directory exists
@@ -28,10 +28,10 @@ PID_DIR.mkdir(parents=True, exist_ok=True)
 def log(message: str) -> None:
     """Log a message with timestamp (optional, disabled by default)"""
     # Uncomment to enable logging
-    log_file = SCRIPT_DIR / "elevator-music.log"
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open(log_file, "a") as f:
-        f.write(f"[{timestamp}] {message}\n")
+    # log_file = SCRIPT_DIR / "elevator-music.log"
+    # timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # with open(log_file, "a") as f:
+    #     f.write(f"[{timestamp}] {message}\n")
 
 
 def detect_audio_player() -> str:
@@ -43,6 +43,18 @@ def detect_audio_player() -> str:
             return player
 
     return "none"
+
+
+def get_random_music_file() -> Path:
+    """Get a random music file from the sounds directory"""
+    # Get all .mp3 files in the sounds directory
+    music_files = list(SOUNDS_DIR.glob("*.mp3"))
+
+    if not music_files:
+        raise FileNotFoundError(f"No music files found in {SOUNDS_DIR}")
+
+    # Randomly select one
+    return random.choice(music_files)
 
 
 def start_music(session_id: str) -> None:
@@ -67,10 +79,17 @@ def start_music(session_id: str) -> None:
         log("No audio player found. Please install ffmpeg, mpv, or vlc.")
         return
 
-    log(f"Starting elevator music with {player} for session {session_id}")
+    # Select a random music file
+    try:
+        music_file = get_random_music_file()
+    except FileNotFoundError as e:
+        log(f"Error: {e}")
+        return
+
+    log(f"Starting elevator music with {player} for session {session_id} (playing: {music_file.name})")
 
     # Start music player based on what's available (single playback, no looping)
-    music_file_str = str(MUSIC_FILE)
+    music_file_str = str(music_file)
 
     if player == "ffplay":
         cmd = ["ffplay", "-nodisp", "-autoexit", music_file_str]
@@ -207,11 +226,12 @@ def main():
     elif hook_name == "test":
         print("Testing elevator music extension...")
         print(f"Audio player: {detect_audio_player()}")
-        print(f"Music file: {MUSIC_FILE}")
-        if MUSIC_FILE.exists():
-            print("Music file found")
+        print(f"Sounds directory: {SOUNDS_DIR}")
+        music_files = list(SOUNDS_DIR.glob("*.mp3"))
+        if music_files:
+            print(f"Found {len(music_files)} music files: {', '.join([f.name for f in music_files])}")
         else:
-            print(f"Warning: Music file not found at {MUSIC_FILE}")
+            print(f"Warning: No music files found in {SOUNDS_DIR}")
         print("Starting test playback...")
         start_music("test")
         print("Playing for 5 seconds...")
