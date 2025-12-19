@@ -18,6 +18,15 @@
       "category": "productivity",
       "keywords": ["hooks", "music", "waiting", "ux"],
       "strict": true
+    },
+    {
+      "name": "hook-logger",
+      "source": "./plugins/hook-logger",
+      "description": "Logs all Claude Code hook invocations to a JSON file with automatic rotation",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": ["hooks", "logging", "debugging", "development", "monitoring"],
+      "strict": true
     }
   ]
 }

@@ -6,23 +6,7 @@ A curated collection of Claude Code plugins for enhanced development workflows.
 
 To install this marketplace in Claude Code:
 
-```bash
-# Install the marketplace
-claude-code marketplace add https://github.com/sevii/agent-marketplace
-```
 
-Or add it manually to your Claude Code settings:
-
-```json
-{
-  "marketplaces": [
-    {
-      "source": "github",
-      "repo": "sevii/agent-marketplace"
-    }
-  ]
-}
-```
 
 ## Available Plugins
 
@@ -32,7 +16,7 @@ Plays soothing elevator music while Claude Code is waiting for user input, makin
 
 **Install:**
 ```bash
-claude-code plugin install sevii-agent-marketplace/elevator-music
+/plugin install elevator-music@agent-marketplace
 ```
 
 ## Contributing

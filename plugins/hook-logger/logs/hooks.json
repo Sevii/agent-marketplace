@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "max_entries": 1000,
+  "entries": [
+    {
+      "hook_event_name": "PreToolUse",
+      "session_id": "test-123",
+      "tool_name": "Read",
+      "tool_input": {
+        "file_path": "/test.txt"
+      },
+      "timestamp": "2025-12-19T15:11:10Z"
+    },
+    {
+      "hook_event_name": "PostToolUse",
+      "session_id": "test-123",
+      "tool_name": "Read",
+      "tool_result": "success",
+      "timestamp": "2025-12-19T15:11:43Z"
+    },
+    {
+      "hook_event_name": "Test",
+      "session_id": "test-session",
+      "message": "Manual test invocation",
+      "timestamp": "2025-12-19T15:13:19Z"
+    },
+    {
+      "hook_event_name": "Debug",
+      "session_id": "test",
+      "message": "debug",
+      "timestamp": "2025-12-19T15:20:17Z"
+    },
+    {
+      "hook_event_name": "Sequential",
+      "session_id": "test",
+      "index": 1,
+      "timestamp": "2025-12-19T15:24:37Z"
+    },
+    {
+      "hook_event_name": "Sequential",
+      "session_id": "test",
+      "index": 2,
+      "timestamp": "2025-12-19T15:24:38Z"
+    },
+    {
+      "hook_event_name": "Sequential",
+      "session_id": "test",
+      "index": 3,
+      "timestamp": "2025-12-19T15:24:38Z"
+    }
+  ]
+}
