@@ -170,22 +170,22 @@ main() {
             cleanup_all "$session_id"
             ;;
         Notification)
-            # Handle notification events - check matcher
-            local matcher=""
+            # Handle notification events - check notification_type
+            local notification_type=""
             if [ -n "$event_data" ] && command -v jq >/dev/null 2>&1; then
                 log "Event data received: $event_data"
-                matcher=$(echo "$event_data" | jq -r '.matcher // empty')
-                log "Parsed matcher: '$matcher'"
+                notification_type=$(echo "$event_data" | jq -r '.notification_type // empty')
+                log "Parsed notification_type: '$notification_type'"
             else
                 log "No event data or jq not available"
             fi
-            case "$matcher" in
+            case "$notification_type" in
                 permission_prompt|idle_prompt)
-                    log "Matcher matched, starting music"
+                    log "Notification type matched, starting music"
                     start_music "$session_id"
                     ;;
                 *)
-                    log "Matcher did not match (got: '$matcher')"
+                    log "Notification type did not match (got: '$notification_type')"
                     ;;
             esac
             ;;
