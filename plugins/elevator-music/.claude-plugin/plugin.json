@@ -1,12 +1,12 @@
 {
   "name": "elevator-music",
   "description": "Plays soothing elevator music while Claude Code is waiting for user input",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Nicholas Sledgianowski"
   },
   "homepage": "https://github.com/sevii/agent-marketplace",
   "repository": "https://github.com/sevii/agent-marketplace",
-  "license": "MIT",
+  "license": "MIT except for music",
   "keywords": ["hooks", "music", "waiting", "ux", "productivity"]
 }
