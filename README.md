@@ -15,7 +15,8 @@ To install this marketplace in Claude Code:
 Plays soothing elevator music while Claude Code is waiting for user input, making the waiting experience more pleasant.
 
 **Install:**
-```bash
+```Claude Code cli
+/plugin marketplace add sevii/agent-marketplace
 /plugin install elevator-music@agent-marketplace
 ```
 
