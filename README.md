@@ -12,7 +12,13 @@ To install this marketplace in Claude Code:
 
 ### Elevator Music
 
-Plays soothing elevator music while Claude Code is waiting for user input, making the waiting experience more pleasant.
+
+
+Plays soothing elevator music while Claude Code is waiting for user input, reminding you to tab back to your terminal.
+
+### Demo
+
+https://github.com/Sevii/agent-marketplace/blob/main/assets/ClaudeElevatorMusicDemo_opt.mp4
 
 **Install:**
 ```Claude Code cli
