@@ -1,7 +1,7 @@
 {
   "name": "elevator-music",
   "description": "Plays soothing elevator music while Claude Code is waiting for user input",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Nicholas Sledgianowski"
   },
