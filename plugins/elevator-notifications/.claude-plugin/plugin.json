@@ -1,0 +1,12 @@
+{
+  "name": "elevator-notifications",
+  "description": "Sends OS notifications when Claude Code is waiting for user input",
+  "version": "1.0.0",
+  "author": {
+    "name": "Nicholas Sledgianowski"
+  },
+  "homepage": "https://github.com/sevii/agent-marketplace",
+  "repository": "https://github.com/sevii/agent-marketplace",
+  "license": "MIT",
+  "keywords": ["hooks", "notifications", "waiting", "ux", "productivity"]
+}
