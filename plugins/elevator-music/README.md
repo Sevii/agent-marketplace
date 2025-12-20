@@ -2,6 +2,10 @@
 
 Plays soothing elevator music while Claude Code is waiting for user input. Letting you know its time to switch back to your terminal.
 
+## Demo
+
+https://github.com/user-attachments/assets/afb170bf-83cd-4a4b-b62e-2dc84fb816ad
+
 
 ## Requirements
 Make sure you have Claude Code Version 2.0+ installed
