@@ -38,13 +38,14 @@ We have only tested on MacOS Sonoma 14.7.8 (23H730)
 ## Music Info
 
 
-The songs are derivatives of an audio sample I created with GarageBand.
-Then I used Suno to transform that sample into various elevator songs. 
+The songs are derivatives of an audio sample I created with GarageBand. Then I used Suno to transform that sample into various elevator songs. 
 This was done using a paid Suno account granting me commercial and non-personal use of the output audio. 
+
 For questions or other license concerns email me via nick@sledgeworx.io
 
 
 ## License
 
 MIT except for music
+
 Music - All rights reserved except those required for you to use the Elevator Music Plugin.
