@@ -19,6 +19,16 @@ https://github.com/user-attachments/assets/df8cdcdc-642a-4248-bde0-38f1b4860802
 
 
 
+## Elevator Notifications
+
+Sends desktop notifications when Claude Code is waiting for user input. A notification-based alternative to elevator-music for those who prefer silent alerts.
+
+**Features:**
+- Cross-platform OS notifications (Linux, macOS, Windows/WSL)
+- Alerts for idle prompts, permission requests, and processing status
+- Lightweight and non-intrusive
+
+
 ## Hook Logger
 
 This plugin captures every hook event that occurs in Claude Code and logs it to a structured JSON file. Perfect for debugging, monitoring, and understanding Claude Code's behavior during development.
@@ -34,6 +44,8 @@ To install this marketplace in Claude Code:
 ```Claude Code cli
 /plugin marketplace add sevii/agent-marketplace
 /plugin install elevator-music@agent-marketplace
+/plugin install elevator-notifications@agent-marketplace
+/plugin install hook-logger@agent-marketplace
 ```
 
 ## Contributing
