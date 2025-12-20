@@ -27,6 +27,15 @@
       "category": "development",
       "keywords": ["hooks", "logging", "debugging", "development", "monitoring"],
       "strict": true
+    },
+    {
+      "name": "elevator-notifications",
+      "source": "./plugins/elevator-notifications",
+      "description": "Sends OS notifications when Claude Code is waiting for user input",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": ["hooks", "notifications", "waiting", "ux", "productivity"],
+      "strict": true
     }
   ]
 }
