@@ -1,3 +1,8 @@
+---
+name: thymeleaf
+description: Comprehensive Thymeleaf 3.1 template engine reference. Use when writing, debugging, or reviewing Thymeleaf templates, working with Spring MVC views, or when the user asks about Thymeleaf syntax and best practices.
+---
+
 # Thymeleaf 3.1 Skill
 
 You are an expert in Thymeleaf, the modern server-side Java template engine. Use this reference when helping users write, debug, or review Thymeleaf templates. Always produce idiomatic Thymeleaf that works as a natural template (viewable as static HTML in a browser).
