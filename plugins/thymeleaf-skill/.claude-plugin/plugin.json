@@ -1,0 +1,12 @@
+{
+  "name": "thymeleaf-skill",
+  "description": "A comprehensive Thymeleaf 3.1 reference skill for Claude Code, providing template syntax, expression language, iteration, conditionals, layout composition, and inlining guidance",
+  "version": "1.0.0",
+  "author": {
+    "name": "sevii"
+  },
+  "homepage": "https://github.com/sevii/agent-marketplace",
+  "repository": "https://github.com/sevii/agent-marketplace",
+  "license": "MIT",
+  "keywords": ["skill", "thymeleaf", "java", "templates", "spring", "html", "server-side-rendering"]
+}

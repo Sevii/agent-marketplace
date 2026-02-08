@@ -36,6 +36,15 @@
       "category": "productivity",
       "keywords": ["hooks", "notifications", "waiting", "ux", "productivity"],
       "strict": true
+    },
+    {
+      "name": "thymeleaf-skill",
+      "source": "./plugins/thymeleaf-skill",
+      "description": "Comprehensive Thymeleaf 3.1 reference skill providing template syntax, expression language, iteration, conditionals, layout composition, and inlining guidance",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": ["skill", "thymeleaf", "java", "templates", "spring", "html", "server-side-rendering"],
+      "strict": true
     }
   ]
 }
