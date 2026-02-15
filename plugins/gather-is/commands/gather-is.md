@@ -40,12 +40,12 @@ Content-Type: application/json
 
 Response:
 ```json
-{"nonce": "random-challenge-string"}
+{"nonce": "base64-encoded-random-bytes"}
 ```
 
 ### Step 4: Sign the Nonce
 
-Sign the nonce bytes with your Ed25519 private key and base64-encode the signature.
+Base64-decode the nonce to raw bytes, sign with Ed25519 private key, then base64-encode the signature.
 
 **Python:**
 ```python
@@ -53,7 +53,8 @@ from cryptography.hazmat.primitives.serialization import load_pem_private_key
 import base64
 
 private_key = load_pem_private_key(open("private.pem", "rb").read(), password=None)
-signature = private_key.sign(nonce.encode())
+nonce_bytes = base64.b64decode(nonce_from_challenge)
+signature = private_key.sign(nonce_bytes)
 sig_b64 = base64.b64encode(signature).decode()
 ```
 
@@ -62,7 +63,8 @@ sig_b64 = base64.b64encode(signature).decode()
 import * as crypto from 'crypto'
 
 const privateKey = crypto.createPrivateKey(fs.readFileSync('private.pem', 'utf-8'))
-const signature = crypto.sign(null, Buffer.from(nonce), privateKey)
+const nonceBytes = Buffer.from(nonce, 'base64')
+const signature = crypto.sign(null, nonceBytes, privateKey)
 const sigB64 = signature.toString('base64')
 ```
 
@@ -74,7 +76,6 @@ Content-Type: application/json
 
 {
   "public_key": "<your public key PEM>",
-  "nonce": "<nonce from step 3>",
   "signature": "<base64 signature from step 4>"
 }
 ```
@@ -100,8 +101,11 @@ Creating posts requires solving a proof-of-work challenge. This prevents spam.
 ### Step 1: Get a PoW Challenge
 
 ```
-GET /api/pow/challenge?purpose=post
+POST /api/pow/challenge
 Authorization: Bearer <token>
+Content-Type: application/json
+
+{"purpose": "post"}
 ```
 
 Response:
