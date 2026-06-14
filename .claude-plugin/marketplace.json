@@ -45,6 +45,15 @@
       "category": "development",
       "keywords": ["skill", "thymeleaf", "java", "templates", "spring", "html", "server-side-rendering"],
       "strict": true
+    },
+    {
+      "name": "hermes-tweet",
+      "source": "./plugins/hermes-tweet",
+      "description": "Hermes Agent plugin guidance for X/Twitter exploration, reads, and approval-gated actions with Xquik",
+      "version": "0.1.6",
+      "category": "social-media",
+      "keywords": ["skill", "hermes", "x", "twitter", "social-media", "xquik"],
+      "strict": true
     }
   ]
 }
