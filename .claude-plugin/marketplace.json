@@ -16,12 +16,7 @@
       "description": "Plays soothing elevator music while Claude Code is waiting for user input",
       "version": "1.0.0",
       "category": "productivity",
-      "keywords": [
-        "hooks",
-        "music",
-        "waiting",
-        "ux"
-      ],
+      "keywords": ["hooks", "music", "waiting", "ux"],
       "strict": true
     },
     {
@@ -30,13 +25,7 @@
       "description": "Logs all Claude Code hook invocations to a JSON file with automatic rotation",
       "version": "1.0.0",
       "category": "development",
-      "keywords": [
-        "hooks",
-        "logging",
-        "debugging",
-        "development",
-        "monitoring"
-      ],
+      "keywords": ["hooks", "logging", "debugging", "development", "monitoring"],
       "strict": true
     },
     {
@@ -45,13 +34,7 @@
       "description": "Sends OS notifications when Claude Code is waiting for user input",
       "version": "1.0.0",
       "category": "productivity",
-      "keywords": [
-        "hooks",
-        "notifications",
-        "waiting",
-        "ux",
-        "productivity"
-      ],
+      "keywords": ["hooks", "notifications", "waiting", "ux", "productivity"],
       "strict": true
     },
     {
@@ -60,15 +43,7 @@
       "description": "Comprehensive Thymeleaf 3.1 reference skill providing template syntax, expression language, iteration, conditionals, layout composition, and inlining guidance",
       "version": "1.0.0",
       "category": "development",
-      "keywords": [
-        "skill",
-        "thymeleaf",
-        "java",
-        "templates",
-        "spring",
-        "html",
-        "server-side-rendering"
-      ],
+      "keywords": ["skill", "thymeleaf", "java", "templates", "spring", "html", "server-side-rendering"],
       "strict": true
     },
     {
@@ -77,14 +52,7 @@
       "description": "Hermes Agent plugin guidance for X/Twitter exploration, reads, and approval-gated actions with Xquik",
       "version": "0.1.6",
       "category": "social-media",
-      "keywords": [
-        "skill",
-        "hermes",
-        "x",
-        "twitter",
-        "social-media",
-        "xquik"
-      ],
+      "keywords": ["skill", "hermes", "x", "twitter", "social-media", "xquik"],
       "strict": true
     }
   ]
