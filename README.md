@@ -34,6 +34,11 @@ Sends desktop notifications when Claude Code is waiting for user input. A notifi
 This plugin captures every hook event that occurs in Claude Code and logs it to a structured JSON file. Perfect for debugging, monitoring, and understanding Claude Code's behavior during development.
 
 
+## Hermes Tweet
+
+Hermes Agent plugin guidance for X/Twitter exploration, reads, and approval-gated actions with Xquik.
+
+
 
 ## Installation
 
@@ -46,6 +51,7 @@ To install this marketplace in Claude Code:
 /plugin install elevator-music@agent-marketplace
 /plugin install elevator-notifications@agent-marketplace
 /plugin install hook-logger@agent-marketplace
+/plugin install hermes-tweet@agent-marketplace
 ```
 
 ## Contributing
