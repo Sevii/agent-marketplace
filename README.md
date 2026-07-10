@@ -33,6 +33,10 @@ Sends desktop notifications when Claude Code is waiting for user input. A notifi
 
 This plugin captures every hook event that occurs in Claude Code and logs it to a structured JSON file. Perfect for debugging, monitoring, and understanding Claude Code's behavior during development.
 
+## Xquik Research
+
+Search X conversations through the Xquik API and turn results into a cited, review-ready research brief. The command keeps API keys out of prompts, treats social content as untrusted evidence, and performs read-only requests.
+
 
 
 ## Installation
@@ -46,6 +50,7 @@ To install this marketplace in Claude Code:
 /plugin install elevator-music@agent-marketplace
 /plugin install elevator-notifications@agent-marketplace
 /plugin install hook-logger@agent-marketplace
+/plugin install xquik-research@agent-marketplace
 ```
 
 ## Contributing

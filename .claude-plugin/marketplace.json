@@ -14,7 +14,7 @@
       "name": "elevator-music",
       "source": "./plugins/elevator-music",
       "description": "Plays soothing elevator music while Claude Code is waiting for user input",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "category": "productivity",
       "keywords": ["hooks", "music", "waiting", "ux"],
       "strict": true
@@ -44,6 +44,15 @@
       "version": "1.0.0",
       "category": "development",
       "keywords": ["skill", "thymeleaf", "java", "templates", "spring", "html", "server-side-rendering"],
+      "strict": true
+    },
+    {
+      "name": "xquik-research",
+      "source": "./plugins/xquik-research",
+      "description": "Research X conversations through the Xquik API with source links, credential safeguards, and review-ready output",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": ["skill", "xquik", "x", "twitter", "research", "social-listening"],
       "strict": true
     }
   ]
