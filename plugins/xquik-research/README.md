@@ -36,3 +36,5 @@ The command:
 - Report authentication, credit, and rate-limit errors without exposing response secrets.
 
 See the [API quickstart](https://docs.xquik.com/quickstart) and [OpenAPI document](https://xquik.com/openapi.json) for the current contract.
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.

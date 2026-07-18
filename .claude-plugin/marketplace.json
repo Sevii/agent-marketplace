@@ -49,7 +49,7 @@
     {
       "name": "xquik-research",
       "source": "./plugins/xquik-research",
-      "description": "Research X conversations through the Xquik API with source links, credential safeguards, and review-ready output",
+      "description": "Research X conversations through Xquik with source links and read-only safeguards. Not affiliated with X Corp.",
       "version": "1.0.0",
       "category": "productivity",
       "keywords": ["skill", "xquik", "x", "twitter", "research", "social-listening"],

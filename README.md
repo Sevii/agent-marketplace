@@ -33,6 +33,10 @@ Sends desktop notifications when Claude Code is waiting for user input. A notifi
 
 This plugin captures every hook event that occurs in Claude Code and logs it to a structured JSON file. Perfect for debugging, monitoring, and understanding Claude Code's behavior during development.
 
+## Thymeleaf Skill
+
+Reference Thymeleaf 3.1 template syntax, expressions, iteration, conditionals, layout composition, and inlining while working in Claude Code.
+
 ## Xquik Research
 
 Search X conversations through the Xquik API and turn results into a cited, review-ready research brief. The command keeps API keys out of prompts, treats social content as untrusted evidence, and performs read-only requests.
@@ -50,6 +54,7 @@ To install this marketplace in Claude Code:
 /plugin install elevator-music@agent-marketplace
 /plugin install elevator-notifications@agent-marketplace
 /plugin install hook-logger@agent-marketplace
+/plugin install thymeleaf-skill@agent-marketplace
 /plugin install xquik-research@agent-marketplace
 ```
 
@@ -57,7 +62,7 @@ To install this marketplace in Claude Code:
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-If you are on windows we could really use a windows tester.
+If you are on Windows, we could really use a Windows tester.
 
 ## License
 
@@ -68,4 +73,4 @@ Music - All rights reserved except those required for you to use the Elevator Mu
 
 ## Consulting
 
-If you need help building Claude Code plugins for your workplace or want to optomize your SDLC for AI agents we are avaliable to help. Either email nick@sledgeworx.io or visit sledgeworx.dev
+If you need help building Claude Code plugins for your workplace or want to optimize your SDLC for AI agents, we are available to help. Either email nick@sledgeworx.io or visit sledgeworx.dev.
