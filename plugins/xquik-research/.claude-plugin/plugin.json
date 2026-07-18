@@ -1,0 +1,12 @@
+{
+  "name": "xquik-research",
+  "description": "Research X conversations through Xquik with source links and read-only safeguards. Not affiliated with X Corp.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Xquik"
+  },
+  "homepage": "https://docs.xquik.com",
+  "repository": "https://github.com/sevii/agent-marketplace",
+  "license": "MIT",
+  "keywords": ["skill", "xquik", "x", "twitter", "research", "social-listening"]
+}
